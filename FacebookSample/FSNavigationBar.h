@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSNavigationController : UINavigationController
+@interface FSNavigationBar : UINavigationBar {
 
+}
++ (FSNavigationBar *)createWithTitle:(NSString *)title;
 @end
