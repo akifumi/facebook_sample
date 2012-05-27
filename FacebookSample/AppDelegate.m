@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "FSFacebookLoginViewController.h"
+#import "FSCentral.h"
+#import "FSHomeTableViewController.h"
 
 @implementation AppDelegate
 
@@ -24,6 +27,22 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [FSCentral sharedObject];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[FSHomeTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+
+    if (![FSCentral completedLogin]) {
+        FSFacebookLoginViewController *facebookLoginController = [[FSFacebookLoginViewController alloc] init];
+        [self.window addSubview:facebookLoginController.view];
+        [FSCentral sharedObject].onFacebookDidLogin = ^(){
+            [self.window removeFromSuperview];
+            [self.window addSubview:navigationController.view];
+        };
+    }else {
+        [self.window addSubview:navigationController.view];
+    }
+    
     return YES;
 }
 
