@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSRootViewController : UIViewController
-
+@interface FSRootViewController : UIViewController {
+    NSArray *permissions;
+}
+@property (nonatomic, strong) NSArray *permissions;
 @end
