@@ -7,12 +7,23 @@
 //
 
 #import "FSFacebookObserver.h"
+#import "JSON.h"
 
 static NSString *kAppId = @"196702453785192";
 static NSString *kSecretKey = @"75a33e4ba6a7d20288547b40e2255875";
 
+typedef enum apiCall {
+    kAPIGraphMe,
+} apiCall;
+
+@interface FSFacebookObserver () {
+
+}
+@property (assign) int currentAPICall;
+@end
+
 @implementation FSFacebookObserver
-@synthesize facebook, permissions, onDidLogin;
+@synthesize facebook, permissions, onDidLogin, currentAPICall;
 
 - (id)init{
     if (self = [super init]) {
@@ -44,7 +55,11 @@ static NSString *kSecretKey = @"75a33e4ba6a7d20288547b40e2255875";
 }
 
 - (void)fbDidLogin{
-    [self.facebook requestWithGraphPath:@"https://graph.facebook.com/platform" andParams:nil andHttpMethod:@"POST" andDelegate:self];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"name,picture",  @"fields",
+                                   nil];
+    [self.facebook requestWithGraphPath:@"me" andParams:params andDelegate:self];
+    currentAPICall = kAPIGraphMe;
     if (self.onDidLogin) {
         self.onDidLogin();
     }
@@ -97,13 +112,14 @@ static NSString *kSecretKey = @"75a33e4ba6a7d20288547b40e2255875";
  * which is passed the parsed response object.
  */
 - (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response{
-    NSLog(@"%@", [response suggestedFilename]);
+    NSLog(@"aaa");
 }
 
 /**
  * Called when an error prevents the request from completing successfully.
  */
-- (void)request:(FBRequest *)request didFailWithError:(NSError *)error{}
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error{
+}
 
 /**
  * Called when a request returns and its response has been parsed into
@@ -116,13 +132,32 @@ static NSString *kSecretKey = @"75a33e4ba6a7d20288547b40e2255875";
  * (void)request:(FBRequest *)request
  *      didReceiveResponse:(NSURLResponse *)response
  */
-- (void)request:(FBRequest *)request didLoad:(id)result{}
+- (void)request:(FBRequest *)request didLoad:(id)result{
+    
+    if (currentAPICall == kAPIGraphMe) {
+        if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
+            result = [result objectAtIndex:0];
+        }
+        NSString *nameID = [[NSString alloc] initWithFormat: @"%@ (%@)", 
+                            [result objectForKey:@"name"], 
+                            [result objectForKey:@"id"]];
+        NSMutableArray *userData = [[NSMutableArray alloc] initWithObjects:
+                                    [NSDictionary dictionaryWithObjectsAndKeys:
+                                     [result objectForKey:@"id"], @"id",
+                                     nameID, @"name",
+                                     [result objectForKey:@"picture"], @"details",
+                                     nil], nil];
+        NSLog(@"%@", userData);
+    }
+}
 
 /**
  * Called when a request returns a response.
  *
  * The result object is the raw response from the server of type NSData
  */
-- (void)request:(FBRequest *)request didLoadRawResponse:(NSData *)data{}
+- (void)request:(FBRequest *)request didLoadRawResponse:(NSData *)data{
+    NSLog(@"ddd");
+}
 
 @end
