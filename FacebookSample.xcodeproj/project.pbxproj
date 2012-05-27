@@ -7,107 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B88B33FC1572191D0043996E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B33FB1572191D0043996E /* UIKit.framework */; };
-		B88B33FE1572191D0043996E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B33FD1572191D0043996E /* Foundation.framework */; };
-		B88B34001572191D0043996E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B33FF1572191D0043996E /* CoreGraphics.framework */; };
-		B88B34061572191D0043996E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B88B34041572191D0043996E /* InfoPlist.strings */; };
-		B88B34081572191D0043996E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34071572191D0043996E /* main.m */; };
-		B88B340C1572191D0043996E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B340B1572191D0043996E /* AppDelegate.m */; };
-		B88B340F1572191D0043996E /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B340E1572191D0043996E /* MasterViewController.m */; };
-		B88B34121572191D0043996E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34111572191D0043996E /* DetailViewController.m */; };
-		B88B34151572191D0043996E /* MasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88B34131572191D0043996E /* MasterViewController_iPhone.xib */; };
-		B88B34181572191D0043996E /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88B34161572191D0043996E /* MasterViewController_iPad.xib */; };
-		B88B341B1572191D0043996E /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88B34191572191D0043996E /* DetailViewController_iPhone.xib */; };
-		B88B341E1572191D0043996E /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B88B341C1572191D0043996E /* DetailViewController_iPad.xib */; };
+		B88B346C1572227E0043996E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B346B1572227E0043996E /* UIKit.framework */; };
+		B88B346E1572227E0043996E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B346D1572227E0043996E /* Foundation.framework */; };
+		B88B34701572227E0043996E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B346F1572227E0043996E /* CoreGraphics.framework */; };
+		B88B34761572227E0043996E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B88B34741572227E0043996E /* InfoPlist.strings */; };
+		B88B34781572227E0043996E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34771572227E0043996E /* main.m */; };
+		B88B347C1572227E0043996E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B347B1572227E0043996E /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B88B33F71572191D0043996E /* FacebookSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B88B33FB1572191D0043996E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B88B33FD1572191D0043996E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B88B33FF1572191D0043996E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B88B34031572191D0043996E /* FacebookSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FacebookSample-Info.plist"; sourceTree = "<group>"; };
-		B88B34051572191D0043996E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B88B34071572191D0043996E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B88B34091572191D0043996E /* FacebookSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookSample-Prefix.pch"; sourceTree = "<group>"; };
-		B88B340A1572191D0043996E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B88B340B1572191D0043996E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B88B340D1572191D0043996E /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		B88B340E1572191D0043996E /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		B88B34101572191D0043996E /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		B88B34111572191D0043996E /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		B88B34141572191D0043996E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
-		B88B34171572191D0043996E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
-		B88B341A1572191D0043996E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
-		B88B341D1572191D0043996E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
+		B88B34671572227E0043996E /* FacebookSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B88B346B1572227E0043996E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B88B346D1572227E0043996E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B88B346F1572227E0043996E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B88B34731572227E0043996E /* FacebookSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FacebookSample-Info.plist"; sourceTree = "<group>"; };
+		B88B34751572227E0043996E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B88B34771572227E0043996E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B88B34791572227E0043996E /* FacebookSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FacebookSample-Prefix.pch"; sourceTree = "<group>"; };
+		B88B347A1572227E0043996E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B88B347B1572227E0043996E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B88B33F41572191D0043996E /* Frameworks */ = {
+		B88B34641572227E0043996E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88B33FC1572191D0043996E /* UIKit.framework in Frameworks */,
-				B88B33FE1572191D0043996E /* Foundation.framework in Frameworks */,
-				B88B34001572191D0043996E /* CoreGraphics.framework in Frameworks */,
+				B88B346C1572227E0043996E /* UIKit.framework in Frameworks */,
+				B88B346E1572227E0043996E /* Foundation.framework in Frameworks */,
+				B88B34701572227E0043996E /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B88B33EC1572191D0043996E = {
+		B88B345C1572227E0043996E = {
 			isa = PBXGroup;
 			children = (
-				B88B34011572191D0043996E /* FacebookSample */,
-				B88B33FA1572191D0043996E /* Frameworks */,
-				B88B33F81572191D0043996E /* Products */,
+				B88B34711572227E0043996E /* FacebookSample */,
+				B88B346A1572227E0043996E /* Frameworks */,
+				B88B34681572227E0043996E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		B88B33F81572191D0043996E /* Products */ = {
+		B88B34681572227E0043996E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B88B33F71572191D0043996E /* FacebookSample.app */,
+				B88B34671572227E0043996E /* FacebookSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B88B33FA1572191D0043996E /* Frameworks */ = {
+		B88B346A1572227E0043996E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B88B33FB1572191D0043996E /* UIKit.framework */,
-				B88B33FD1572191D0043996E /* Foundation.framework */,
-				B88B33FF1572191D0043996E /* CoreGraphics.framework */,
+				B88B346B1572227E0043996E /* UIKit.framework */,
+				B88B346D1572227E0043996E /* Foundation.framework */,
+				B88B346F1572227E0043996E /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B88B34011572191D0043996E /* FacebookSample */ = {
+		B88B34711572227E0043996E /* FacebookSample */ = {
 			isa = PBXGroup;
 			children = (
-				B88B340A1572191D0043996E /* AppDelegate.h */,
-				B88B340B1572191D0043996E /* AppDelegate.m */,
-				B88B340D1572191D0043996E /* MasterViewController.h */,
-				B88B340E1572191D0043996E /* MasterViewController.m */,
-				B88B34101572191D0043996E /* DetailViewController.h */,
-				B88B34111572191D0043996E /* DetailViewController.m */,
-				B88B34131572191D0043996E /* MasterViewController_iPhone.xib */,
-				B88B34161572191D0043996E /* MasterViewController_iPad.xib */,
-				B88B34191572191D0043996E /* DetailViewController_iPhone.xib */,
-				B88B341C1572191D0043996E /* DetailViewController_iPad.xib */,
-				B88B34021572191D0043996E /* Supporting Files */,
+				B88B347A1572227E0043996E /* AppDelegate.h */,
+				B88B347B1572227E0043996E /* AppDelegate.m */,
+				B88B34721572227E0043996E /* Supporting Files */,
 			);
 			path = FacebookSample;
 			sourceTree = "<group>";
 		};
-		B88B34021572191D0043996E /* Supporting Files */ = {
+		B88B34721572227E0043996E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B88B34031572191D0043996E /* FacebookSample-Info.plist */,
-				B88B34041572191D0043996E /* InfoPlist.strings */,
-				B88B34071572191D0043996E /* main.m */,
-				B88B34091572191D0043996E /* FacebookSample-Prefix.pch */,
+				B88B34731572227E0043996E /* FacebookSample-Info.plist */,
+				B88B34741572227E0043996E /* InfoPlist.strings */,
+				B88B34771572227E0043996E /* main.m */,
+				B88B34791572227E0043996E /* FacebookSample-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,13 +93,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B88B33F61572191D0043996E /* FacebookSample */ = {
+		B88B34661572227E0043996E /* FacebookSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B88B34211572191D0043996E /* Build configuration list for PBXNativeTarget "FacebookSample" */;
+			buildConfigurationList = B88B347F1572227E0043996E /* Build configuration list for PBXNativeTarget "FacebookSample" */;
 			buildPhases = (
-				B88B33F31572191D0043996E /* Sources */,
-				B88B33F41572191D0043996E /* Frameworks */,
-				B88B33F51572191D0043996E /* Resources */,
+				B88B34631572227E0043996E /* Sources */,
+				B88B34641572227E0043996E /* Frameworks */,
+				B88B34651572227E0043996E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -129,108 +107,70 @@
 			);
 			name = FacebookSample;
 			productName = FacebookSample;
-			productReference = B88B33F71572191D0043996E /* FacebookSample.app */;
+			productReference = B88B34671572227E0043996E /* FacebookSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		B88B33EE1572191D0043996E /* Project object */ = {
+		B88B345E1572227E0043996E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = B88B33F11572191D0043996E /* Build configuration list for PBXProject "FacebookSample" */;
+			buildConfigurationList = B88B34611572227E0043996E /* Build configuration list for PBXProject "FacebookSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = B88B33EC1572191D0043996E;
-			productRefGroup = B88B33F81572191D0043996E /* Products */;
+			mainGroup = B88B345C1572227E0043996E;
+			productRefGroup = B88B34681572227E0043996E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B88B33F61572191D0043996E /* FacebookSample */,
+				B88B34661572227E0043996E /* FacebookSample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B88B33F51572191D0043996E /* Resources */ = {
+		B88B34651572227E0043996E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88B34061572191D0043996E /* InfoPlist.strings in Resources */,
-				B88B34151572191D0043996E /* MasterViewController_iPhone.xib in Resources */,
-				B88B34181572191D0043996E /* MasterViewController_iPad.xib in Resources */,
-				B88B341B1572191D0043996E /* DetailViewController_iPhone.xib in Resources */,
-				B88B341E1572191D0043996E /* DetailViewController_iPad.xib in Resources */,
+				B88B34761572227E0043996E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B88B33F31572191D0043996E /* Sources */ = {
+		B88B34631572227E0043996E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B88B34081572191D0043996E /* main.m in Sources */,
-				B88B340C1572191D0043996E /* AppDelegate.m in Sources */,
-				B88B340F1572191D0043996E /* MasterViewController.m in Sources */,
-				B88B34121572191D0043996E /* DetailViewController.m in Sources */,
+				B88B34781572227E0043996E /* main.m in Sources */,
+				B88B347C1572227E0043996E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B88B34041572191D0043996E /* InfoPlist.strings */ = {
+		B88B34741572227E0043996E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B88B34051572191D0043996E /* en */,
+				B88B34751572227E0043996E /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		B88B34131572191D0043996E /* MasterViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B88B34141572191D0043996E /* en */,
-			);
-			name = MasterViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		B88B34161572191D0043996E /* MasterViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B88B34171572191D0043996E /* en */,
-			);
-			name = MasterViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		B88B34191572191D0043996E /* DetailViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B88B341A1572191D0043996E /* en */,
-			);
-			name = DetailViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		B88B341C1572191D0043996E /* DetailViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B88B341D1572191D0043996E /* en */,
-			);
-			name = DetailViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B88B341F1572191D0043996E /* Debug */ = {
+		B88B347D1572227E0043996E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,7 +195,7 @@
 			};
 			name = Debug;
 		};
-		B88B34201572191D0043996E /* Release */ = {
+		B88B347E1572227E0043996E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,7 +215,7 @@
 			};
 			name = Release;
 		};
-		B88B34221572191D0043996E /* Debug */ = {
+		B88B34801572227E0043996E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -286,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		B88B34231572191D0043996E /* Release */ = {
+		B88B34811572227E0043996E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -300,24 +240,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B88B33F11572191D0043996E /* Build configuration list for PBXProject "FacebookSample" */ = {
+		B88B34611572227E0043996E /* Build configuration list for PBXProject "FacebookSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B88B341F1572191D0043996E /* Debug */,
-				B88B34201572191D0043996E /* Release */,
+				B88B347D1572227E0043996E /* Debug */,
+				B88B347E1572227E0043996E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B88B34211572191D0043996E /* Build configuration list for PBXNativeTarget "FacebookSample" */ = {
+		B88B347F1572227E0043996E /* Build configuration list for PBXNativeTarget "FacebookSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B88B34221572191D0043996E /* Debug */,
-				B88B34231572191D0043996E /* Release */,
+				B88B34801572227E0043996E /* Debug */,
+				B88B34811572227E0043996E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = B88B33EE1572191D0043996E /* Project object */;
+	rootObject = B88B345E1572227E0043996E /* Project object */;
 }

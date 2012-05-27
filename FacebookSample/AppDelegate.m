@@ -8,21 +8,13 @@
 
 #import "AppDelegate.h"
 
-#import "MasterViewController.h"
-
-#import "DetailViewController.h"
-
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize navigationController = _navigationController;
-@synthesize splitViewController = _splitViewController;
 
 - (void)dealloc
 {
     [_window release];
-    [_navigationController release];
-    [_splitViewController release];
     [super dealloc];
 }
 
@@ -30,25 +22,7 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPhone" bundle:nil] autorelease];
-        self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
-        self.window.rootViewController = self.navigationController;
-    } else {
-        MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController_iPad" bundle:nil] autorelease];
-        UINavigationController *masterNavigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
-        
-        DetailViewController *detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController_iPad" bundle:nil] autorelease];
-        UINavigationController *detailNavigationController = [[[UINavigationController alloc] initWithRootViewController:detailViewController] autorelease];
-    	
-    	masterViewController.detailViewController = detailViewController;
-    	
-        self.splitViewController = [[[UISplitViewController alloc] init] autorelease];
-        self.splitViewController.delegate = detailViewController;
-        self.splitViewController.viewControllers = [NSArray arrayWithObjects:masterNavigationController, detailNavigationController, nil];
-        
-        self.window.rootViewController = self.splitViewController;
-    }
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
