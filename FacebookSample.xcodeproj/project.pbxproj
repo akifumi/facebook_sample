@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B83023771572AE5100CDB66C /* FSHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83023761572AE5100CDB66C /* FSHomeTableViewController.m */; };
 		B869B6CD15722747006349BA /* FSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6CC15722747006349BA /* FSNavigationBar.m */; };
 		B869B6D015722E8F006349BA /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B869B6CF15722E8F006349BA /* FBConnect.bundle */; };
 		B869B6D3157232F7006349BA /* FSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6D2157232F7006349BA /* FSButton.m */; };
+		B869B6E4157264F6006349BA /* FSFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6E3157264F6006349BA /* FSFacebookManager.m */; };
+		B869B6E7157265DB006349BA /* FSFacebookObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6E6157265DA006349BA /* FSFacebookObserver.m */; };
+		B869B6ED15726995006349BA /* FSCentral.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6EC15726995006349BA /* FSCentral.m */; };
+		B869B6F4157274FE006349BA /* FSFacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6F3157274FE006349BA /* FSFacebookLoginViewController.m */; };
 		B88B346C1572227E0043996E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B346B1572227E0043996E /* UIKit.framework */; };
 		B88B346E1572227E0043996E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B346D1572227E0043996E /* Foundation.framework */; };
 		B88B34701572227E0043996E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B346F1572227E0043996E /* CoreGraphics.framework */; };
@@ -28,16 +33,25 @@
 		B88B34AF157222E70043996E /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34A1157222E70043996E /* SBJsonBase.m */; };
 		B88B34B0157222E70043996E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34A3157222E70043996E /* SBJsonParser.m */; };
 		B88B34B1157222E70043996E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34A5157222E70043996E /* SBJsonWriter.m */; };
-		B88B34C1157226CB0043996E /* FSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34C0157226CB0043996E /* FSRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B83023751572AE5100CDB66C /* FSHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHomeTableViewController.h; sourceTree = "<group>"; };
+		B83023761572AE5100CDB66C /* FSHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHomeTableViewController.m; sourceTree = "<group>"; };
 		B869B6CB15722747006349BA /* FSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNavigationBar.h; sourceTree = "<group>"; };
 		B869B6CC15722747006349BA /* FSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNavigationBar.m; sourceTree = "<group>"; };
 		B869B6CF15722E8F006349BA /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBConnect.bundle; path = Facebook/FBConnect.bundle; sourceTree = "<group>"; };
 		B869B6D1157232F7006349BA /* FSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSButton.h; sourceTree = "<group>"; };
 		B869B6D2157232F7006349BA /* FSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSButton.m; sourceTree = "<group>"; };
 		B869B6DE157263B4006349BA /* FSHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSHeader.h; sourceTree = "<group>"; };
+		B869B6E2157264F6006349BA /* FSFacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookManager.h; sourceTree = "<group>"; };
+		B869B6E3157264F6006349BA /* FSFacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookManager.m; sourceTree = "<group>"; };
+		B869B6E5157265DA006349BA /* FSFacebookObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookObserver.h; sourceTree = "<group>"; };
+		B869B6E6157265DA006349BA /* FSFacebookObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookObserver.m; sourceTree = "<group>"; };
+		B869B6EB15726995006349BA /* FSCentral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCentral.h; sourceTree = "<group>"; };
+		B869B6EC15726995006349BA /* FSCentral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCentral.m; sourceTree = "<group>"; };
+		B869B6F2157274FE006349BA /* FSFacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookLoginViewController.h; sourceTree = "<group>"; };
+		B869B6F3157274FE006349BA /* FSFacebookLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookLoginViewController.m; sourceTree = "<group>"; };
 		B88B34671572227E0043996E /* FacebookSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88B346B1572227E0043996E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B88B346D1572227E0043996E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,8 +87,6 @@
 		B88B34A3157222E70043996E /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		B88B34A4157222E70043996E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		B88B34A5157222E70043996E /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		B88B34BF157226CB0043996E /* FSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRootViewController.h; sourceTree = "<group>"; };
-		B88B34C0157226CB0043996E /* FSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B869B6EE157274DE006349BA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B869B6F2157274FE006349BA /* FSFacebookLoginViewController.h */,
+				B869B6F3157274FE006349BA /* FSFacebookLoginViewController.m */,
+				B83023751572AE5100CDB66C /* FSHomeTableViewController.h */,
+				B83023761572AE5100CDB66C /* FSHomeTableViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		B88B345C1572227E0043996E = {
 			isa = PBXGroup;
 			children = (
@@ -126,12 +149,17 @@
 				B869B6DE157263B4006349BA /* FSHeader.h */,
 				B88B347A1572227E0043996E /* AppDelegate.h */,
 				B88B347B1572227E0043996E /* AppDelegate.m */,
-				B88B34BF157226CB0043996E /* FSRootViewController.h */,
-				B88B34C0157226CB0043996E /* FSRootViewController.m */,
+				B869B6EE157274DE006349BA /* ViewController */,
 				B869B6CB15722747006349BA /* FSNavigationBar.h */,
 				B869B6CC15722747006349BA /* FSNavigationBar.m */,
 				B869B6D1157232F7006349BA /* FSButton.h */,
 				B869B6D2157232F7006349BA /* FSButton.m */,
+				B869B6E2157264F6006349BA /* FSFacebookManager.h */,
+				B869B6E3157264F6006349BA /* FSFacebookManager.m */,
+				B869B6E5157265DA006349BA /* FSFacebookObserver.h */,
+				B869B6E6157265DA006349BA /* FSFacebookObserver.m */,
+				B869B6EB15726995006349BA /* FSCentral.h */,
+				B869B6EC15726995006349BA /* FSCentral.m */,
 				B88B34721572227E0043996E /* Supporting Files */,
 			);
 			path = FacebookSample;
@@ -264,9 +292,13 @@
 				B88B34AF157222E70043996E /* SBJsonBase.m in Sources */,
 				B88B34B0157222E70043996E /* SBJsonParser.m in Sources */,
 				B88B34B1157222E70043996E /* SBJsonWriter.m in Sources */,
-				B88B34C1157226CB0043996E /* FSRootViewController.m in Sources */,
 				B869B6CD15722747006349BA /* FSNavigationBar.m in Sources */,
 				B869B6D3157232F7006349BA /* FSButton.m in Sources */,
+				B869B6E4157264F6006349BA /* FSFacebookManager.m in Sources */,
+				B869B6E7157265DB006349BA /* FSFacebookObserver.m in Sources */,
+				B869B6ED15726995006349BA /* FSCentral.m in Sources */,
+				B869B6F4157274FE006349BA /* FSFacebookLoginViewController.m in Sources */,
+				B83023771572AE5100CDB66C /* FSHomeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

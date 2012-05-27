@@ -1,5 +1,5 @@
 //
-//  FSRootViewController.h
+//  FSFacebookLoginViewController.h
 //  FacebookSample
 //
 //  Created by Fukaya Akifumi on 12/05/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSRootViewController : UIViewController {
-    NSArray *permissions;
-}
-@property (nonatomic, strong) NSArray *permissions;
+@interface FSFacebookLoginViewController : UIViewController
+
 @end

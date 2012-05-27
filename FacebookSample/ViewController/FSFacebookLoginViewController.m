@@ -1,22 +1,20 @@
 //
-//  FSRootViewController.m
+//  FSFacebookLoginViewController.m
 //  FacebookSample
 //
 //  Created by Fukaya Akifumi on 12/05/27.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "FSRootViewController.h"
-#import "AppDelegate.h"
-#import "FSNavigationBar.h"
+#import "FSFacebookLoginViewController.h"
 #import "FSHeader.h"
+#import "FSCentral.h"
 
-@interface FSRootViewController ()
+@interface FSFacebookLoginViewController ()
 
 @end
 
-@implementation FSRootViewController
-@synthesize permissions;
+@implementation FSFacebookLoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,20 +29,7 @@
         FSButton *button = [FSButton createWithFileName:@"FBConnect.bundle/images/LoginWithFacebookPressed.png"];
         button.position = CGPointMake((screenSize.width - button.size.width)/2, screenSize.height - button.size.height - 30);
         [button handleControlEvent:UIControlEventTouchUpInside block:^(){
-            AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-            if (![[delegate facebook] isSessionValid]) {
-                UIWebView *webView = [[UIWebView alloc] init];
-                [self.view addSubview:webView];
-                [delegate.facebook authorize:permissions];
-            }else {
-                NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                               @"SELECT uid, name, pic FROM user WHERE uid=me()", @"query",
-                                               nil];
-                [[delegate facebook] requestWithMethodName:@"fql.query"
-                                                 andParams:params
-                                             andHttpMethod:@"POST"
-                                               andDelegate:delegate];
-            }        
+            [FSCentral authorizeFacebook];
         }];
         [self.view addSubview:button];
     }
