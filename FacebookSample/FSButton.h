@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FSButton : UIButton
+@interface FSButton : UIButton {
 
+}
+@property (nonatomic, assign) CGSize size;
+@property (nonatomic, assign) CGPoint position;
++ (FSButton *)createWithFileName:(NSString *)fileName;
+- (void)handleControlEvent:(UIControlEvents)event block:(void(^)())block;
 @end
