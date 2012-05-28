@@ -15,7 +15,7 @@ static FSCentral *object = nil;
 @end
 
 @implementation FSCentral
-@synthesize currentUser, onFacebookDidLogin;
+@synthesize currentUser, friendsInfo, onFacebookDidLogin, onFacebookGotFriendsInfo;
 
 - (id)init{
     if (self = [super init]) {
@@ -24,6 +24,12 @@ static FSCentral *object = nil;
         [FSFacebookManager sharedManager].onDidLogin = ^(){
             if (self.onFacebookDidLogin) {
                 self.onFacebookDidLogin();
+            }
+        };
+        
+        [FSFacebookManager sharedManager].onGotFriendsInfo = ^(){
+            if (self.onFacebookGotFriendsInfo) {
+                self.onFacebookGotFriendsInfo();
             }
         };
     }
