@@ -15,4 +15,12 @@
     [facebook requestWithGraphPath:@"me" andParams:params andDelegate:observer];
 }
 
+- (void)requestFriendsWithFacebook:(Facebook *)facebook observer:(id)observer{
+    [facebook requestWithGraphPath:@"me/friends" andDelegate:observer];
+}
+
+- (void)requestPicturesAlbumWithFacebook:(Facebook *)facebook observer:(id)observer{
+    [facebook requestWithGraphPath:@"me/albums" andDelegate:observer];
+}
+
 @end

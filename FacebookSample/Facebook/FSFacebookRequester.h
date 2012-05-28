@@ -13,4 +13,6 @@
     
 }
 - (void)requestUserInfoWithFacebook:(Facebook *)facebook observer:(id)observer;
+- (void)requestFriendsWithFacebook:(Facebook *)facebook observer:(id)observer;
+- (void)requestPicturesAlbumWithFacebook:(Facebook *)facebook observer:(id)observer;
 @end
