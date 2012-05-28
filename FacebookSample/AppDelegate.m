@@ -40,6 +40,7 @@
             [self.window addSubview:navigationController.view];
         };
     }else {
+        [FSCentral authorizeFacebook];
         [self.window addSubview:navigationController.view];
     }
     
