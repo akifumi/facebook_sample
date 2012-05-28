@@ -8,6 +8,8 @@
 
 typedef enum apiCall {
     kAPIGraphMe,
+    kAPIGraphFriends,
+    kAPIGraphAlbum,
 } apiCall;
 
 #define kAppId                  @"196702453785192"
