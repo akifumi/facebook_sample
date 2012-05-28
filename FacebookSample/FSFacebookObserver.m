@@ -112,7 +112,6 @@ typedef enum apiCall {
  * which is passed the parsed response object.
  */
 - (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response{
-    NSLog(@"aaa");
 }
 
 /**
@@ -138,16 +137,9 @@ typedef enum apiCall {
         if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
             result = [result objectAtIndex:0];
         }
-        NSString *nameID = [[NSString alloc] initWithFormat: @"%@ (%@)", 
-                            [result objectForKey:@"name"], 
-                            [result objectForKey:@"id"]];
-        NSMutableArray *userData = [[NSMutableArray alloc] initWithObjects:
-                                    [NSDictionary dictionaryWithObjectsAndKeys:
-                                     [result objectForKey:@"id"], @"id",
-                                     nameID, @"name",
-                                     [result objectForKey:@"picture"], @"details",
-                                     nil], nil];
-        NSLog(@"%@", userData);
+//        NSString *userId = [result objectForKey:@"id"];
+//        NSString *name = [result objectForKey:@"name"];
+//        NSString *pictureURL = [result objectForKey:@"picture"];
     }
 }
 
@@ -157,7 +149,6 @@ typedef enum apiCall {
  * The result object is the raw response from the server of type NSData
  */
 - (void)request:(FBRequest *)request didLoadRawResponse:(NSData *)data{
-    NSLog(@"ddd");
 }
 
 @end
