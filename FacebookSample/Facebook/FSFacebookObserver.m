@@ -8,33 +8,16 @@
 
 #import "FSFacebookObserver.h"
 #import "JSON.h"
-
-static NSString *kAppId = @"196702453785192";
-static NSString *kSecretKey = @"75a33e4ba6a7d20288547b40e2255875";
-
-typedef enum apiCall {
-    kAPIGraphMe,
-} apiCall;
+#import "FSFacebookInfo.h"
 
 @interface FSFacebookObserver () {
 
 }
-@property (assign) int currentAPICall;
+@property (nonatomic, strong) NSArray *permissions;
 @end
 
 @implementation FSFacebookObserver
 @synthesize facebook, permissions, onDidLogin, currentAPICall;
-
-- (id)init{
-    if (self = [super init]) {
-        self.facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:self];
-    }
-    return self;
-}
-
-+ (id)create{
-    return [[self alloc] init];
-}
 
 - (void)authorize{
     if (![self.facebook isSessionValid]) {
@@ -55,11 +38,6 @@ typedef enum apiCall {
 }
 
 - (void)fbDidLogin{
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"name,picture",  @"fields",
-                                   nil];
-    [self.facebook requestWithGraphPath:@"me" andParams:params andDelegate:self];
-    currentAPICall = kAPIGraphMe;
     if (self.onDidLogin) {
         self.onDidLogin();
     }
@@ -78,8 +56,7 @@ typedef enum apiCall {
  * should overwrite the old access token with the new one in this method.
  * See extendAccessToken for more details.
  */
-- (void)fbDidExtendToken:(NSString*)accessToken
-               expiresAt:(NSDate*)expiresAt{
+- (void)fbDidExtendToken:(NSString*)accessToken expiresAt:(NSDate*)expiresAt{
 }
 
 /**
@@ -102,7 +79,8 @@ typedef enum apiCall {
 /**
  * Called just before the request is sent to the server.
  */
-- (void)requestLoading:(FBRequest *)request{}
+- (void)requestLoading:(FBRequest *)request{
+}
 
 /**
  * Called when the Facebook API request has returned a response.
@@ -133,10 +111,11 @@ typedef enum apiCall {
  */
 - (void)request:(FBRequest *)request didLoad:(id)result{
     
-    if (currentAPICall == kAPIGraphMe) {
+    if (self.currentAPICall == kAPIGraphMe) {
         if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
             result = [result objectAtIndex:0];
         }
+//        NSLog(@"result:%@", result);
 //        NSString *userId = [result objectForKey:@"id"];
 //        NSString *name = [result objectForKey:@"name"];
 //        NSString *pictureURL = [result objectForKey:@"picture"];

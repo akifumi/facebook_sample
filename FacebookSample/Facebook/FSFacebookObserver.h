@@ -17,9 +17,8 @@ typedef void (^FacebookObserverDelegateBlock)();
     
 }
 @property (nonatomic, strong) Facebook *facebook;
-@property (nonatomic, strong) NSArray *permissions;
 @property (nonatomic, copy) FacebookObserverDelegateBlock onDidLogin;
-+ (id)create;
+@property (assign) int currentAPICall;
 - (void)authorize;
 - (BOOL)completedLogin;
 @end
