@@ -29,7 +29,7 @@ typedef void (^ActionBlock)();
 }
 
 + (FSButton *)createWithFileName:(NSString *)fileName{
-    return [[self alloc] initWithFileName:fileName];
+    return [[[self alloc] initWithFileName:fileName] autorelease];
 }
 
 - (void)setPosition:(CGPoint)position{

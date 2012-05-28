@@ -14,7 +14,7 @@
     FSNavigationBar *navigationBar = [[FSNavigationBar alloc] init];
     navigationBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 40);
     
-    UINavigationItem *titleItem = [[UINavigationItem alloc] initWithTitle:title];
+    UINavigationItem *titleItem = [[[UINavigationItem alloc] initWithTitle:title] autorelease];
     
     [navigationBar pushNavigationItem:titleItem animated:YES];
     

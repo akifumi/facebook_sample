@@ -29,11 +29,11 @@
     [self.window makeKeyAndVisible];
     
     [FSCentral sharedObject];
-    
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[FSHomeTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+        
+    UINavigationController *navigationController = [[[UINavigationController alloc] initWithRootViewController:[[FSHomeTableViewController alloc] initWithStyle:UITableViewStylePlain]] autorelease];
 
     if (![FSCentral completedLogin]) {
-        FSFacebookLoginViewController *facebookLoginController = [[FSFacebookLoginViewController alloc] init];
+        FSFacebookLoginViewController *facebookLoginController = [[[FSFacebookLoginViewController alloc] init] autorelease];
         [self.window addSubview:facebookLoginController.view];
         [FSCentral sharedObject].onFacebookDidLogin = ^(){
             [facebookLoginController.view removeFromSuperview];

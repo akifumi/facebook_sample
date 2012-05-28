@@ -44,4 +44,9 @@ static FSCentral *object = nil;
     return [[FSFacebookManager sharedManager] completedLogin];
 }
 
+- (void)dealloc{
+    [object release];
+    [super dealloc];
+}
+
 @end
