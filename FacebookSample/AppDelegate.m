@@ -41,7 +41,9 @@
         };
     }else {
         [FSCentral authorizeFacebook];
-        [self.window addSubview:navigationController.view];
+        [FSCentral sharedObject].onFacebookGotFriendsInfo = ^(){
+            [self.window addSubview:navigationController.view];
+        };
     }
     
     return YES;
