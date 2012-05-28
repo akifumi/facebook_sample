@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B83023771572AE5100CDB66C /* FSHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83023761572AE5100CDB66C /* FSHomeTableViewController.m */; };
+		B84B19271573BCC4007EAAE4 /* FSFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B19241573BCC4007EAAE4 /* FSFacebookManager.m */; };
+		B84B19281573BCC4007EAAE4 /* FSFacebookObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B19261573BCC4007EAAE4 /* FSFacebookObserver.m */; };
+		B84B19351573BD75007EAAE4 /* FSFacebookRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B19341573BD75007EAAE4 /* FSFacebookRequester.m */; };
 		B869B6CD15722747006349BA /* FSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6CC15722747006349BA /* FSNavigationBar.m */; };
 		B869B6D015722E8F006349BA /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B869B6CF15722E8F006349BA /* FBConnect.bundle */; };
 		B869B6D3157232F7006349BA /* FSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6D2157232F7006349BA /* FSButton.m */; };
-		B869B6E4157264F6006349BA /* FSFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6E3157264F6006349BA /* FSFacebookManager.m */; };
-		B869B6E7157265DB006349BA /* FSFacebookObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6E6157265DA006349BA /* FSFacebookObserver.m */; };
 		B869B6ED15726995006349BA /* FSCentral.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6EC15726995006349BA /* FSCentral.m */; };
 		B869B6F4157274FE006349BA /* FSFacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6F3157274FE006349BA /* FSFacebookLoginViewController.m */; };
 		B88B346C1572227E0043996E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88B346B1572227E0043996E /* UIKit.framework */; };
@@ -38,16 +39,18 @@
 /* Begin PBXFileReference section */
 		B83023751572AE5100CDB66C /* FSHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSHomeTableViewController.h; sourceTree = "<group>"; };
 		B83023761572AE5100CDB66C /* FSHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSHomeTableViewController.m; sourceTree = "<group>"; };
+		B84B19231573BCC4007EAAE4 /* FSFacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookManager.h; sourceTree = "<group>"; };
+		B84B19241573BCC4007EAAE4 /* FSFacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookManager.m; sourceTree = "<group>"; };
+		B84B19251573BCC4007EAAE4 /* FSFacebookObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookObserver.h; sourceTree = "<group>"; };
+		B84B19261573BCC4007EAAE4 /* FSFacebookObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookObserver.m; sourceTree = "<group>"; };
+		B84B19331573BD75007EAAE4 /* FSFacebookRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookRequester.h; sourceTree = "<group>"; };
+		B84B19341573BD75007EAAE4 /* FSFacebookRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookRequester.m; sourceTree = "<group>"; };
 		B869B6CB15722747006349BA /* FSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNavigationBar.h; sourceTree = "<group>"; };
 		B869B6CC15722747006349BA /* FSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNavigationBar.m; sourceTree = "<group>"; };
 		B869B6CF15722E8F006349BA /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBConnect.bundle; path = Facebook/FBConnect.bundle; sourceTree = "<group>"; };
 		B869B6D1157232F7006349BA /* FSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSButton.h; sourceTree = "<group>"; };
 		B869B6D2157232F7006349BA /* FSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSButton.m; sourceTree = "<group>"; };
 		B869B6DE157263B4006349BA /* FSHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSHeader.h; sourceTree = "<group>"; };
-		B869B6E2157264F6006349BA /* FSFacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookManager.h; sourceTree = "<group>"; };
-		B869B6E3157264F6006349BA /* FSFacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookManager.m; sourceTree = "<group>"; };
-		B869B6E5157265DA006349BA /* FSFacebookObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookObserver.h; sourceTree = "<group>"; };
-		B869B6E6157265DA006349BA /* FSFacebookObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookObserver.m; sourceTree = "<group>"; };
 		B869B6EB15726995006349BA /* FSCentral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCentral.h; sourceTree = "<group>"; };
 		B869B6EC15726995006349BA /* FSCentral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCentral.m; sourceTree = "<group>"; };
 		B869B6F2157274FE006349BA /* FSFacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookLoginViewController.h; sourceTree = "<group>"; };
@@ -103,6 +106,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B84B19221573BCC4007EAAE4 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				B84B19231573BCC4007EAAE4 /* FSFacebookManager.h */,
+				B84B19241573BCC4007EAAE4 /* FSFacebookManager.m */,
+				B84B19251573BCC4007EAAE4 /* FSFacebookObserver.h */,
+				B84B19261573BCC4007EAAE4 /* FSFacebookObserver.m */,
+				B84B19331573BD75007EAAE4 /* FSFacebookRequester.h */,
+				B84B19341573BD75007EAAE4 /* FSFacebookRequester.m */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
 		B869B6EE157274DE006349BA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,14 +166,11 @@
 				B88B347A1572227E0043996E /* AppDelegate.h */,
 				B88B347B1572227E0043996E /* AppDelegate.m */,
 				B869B6EE157274DE006349BA /* ViewController */,
+				B84B19221573BCC4007EAAE4 /* Facebook */,
 				B869B6CB15722747006349BA /* FSNavigationBar.h */,
 				B869B6CC15722747006349BA /* FSNavigationBar.m */,
 				B869B6D1157232F7006349BA /* FSButton.h */,
 				B869B6D2157232F7006349BA /* FSButton.m */,
-				B869B6E2157264F6006349BA /* FSFacebookManager.h */,
-				B869B6E3157264F6006349BA /* FSFacebookManager.m */,
-				B869B6E5157265DA006349BA /* FSFacebookObserver.h */,
-				B869B6E6157265DA006349BA /* FSFacebookObserver.m */,
 				B869B6EB15726995006349BA /* FSCentral.h */,
 				B869B6EC15726995006349BA /* FSCentral.m */,
 				B88B34721572227E0043996E /* Supporting Files */,
@@ -294,11 +307,12 @@
 				B88B34B1157222E70043996E /* SBJsonWriter.m in Sources */,
 				B869B6CD15722747006349BA /* FSNavigationBar.m in Sources */,
 				B869B6D3157232F7006349BA /* FSButton.m in Sources */,
-				B869B6E4157264F6006349BA /* FSFacebookManager.m in Sources */,
-				B869B6E7157265DB006349BA /* FSFacebookObserver.m in Sources */,
 				B869B6ED15726995006349BA /* FSCentral.m in Sources */,
 				B869B6F4157274FE006349BA /* FSFacebookLoginViewController.m in Sources */,
 				B83023771572AE5100CDB66C /* FSHomeTableViewController.m in Sources */,
+				B84B19271573BCC4007EAAE4 /* FSFacebookManager.m in Sources */,
+				B84B19281573BCC4007EAAE4 /* FSFacebookObserver.m in Sources */,
+				B84B19351573BD75007EAAE4 /* FSFacebookRequester.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
