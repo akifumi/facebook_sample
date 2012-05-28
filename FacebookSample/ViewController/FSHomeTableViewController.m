@@ -7,9 +7,10 @@
 //
 
 #import "FSHomeTableViewController.h"
+#import "FSCentral.h"
 
 @interface FSHomeTableViewController () {
-    NSMutableArray *items;
+    NSArray *items;
 }
 
 @end
@@ -23,10 +24,7 @@
         // Custom initialization
         self.title = @"Home";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
-        items = [[NSMutableArray array] retain];
-        for (int i = 0; i < 10; i++) {
-            [items addObject:[NSString stringWithFormat:@"item%d", i+1]];
-        }
+        items = [FSCentral sharedObject].friendsInfo;
     }
     return self;
 }
@@ -79,7 +77,7 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [items objectAtIndex:indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"item%d", indexPath.row];
     
     return cell;
 }
