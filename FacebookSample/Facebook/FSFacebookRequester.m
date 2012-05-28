@@ -10,4 +10,9 @@
 
 @implementation FSFacebookRequester
 
+- (void)requestUserInfoWithFacebook:(Facebook *)facebook observer:(id)observer{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"name,picture", @"fields", nil];
+    [facebook requestWithGraphPath:@"me" andParams:params andDelegate:observer];
+}
+
 @end

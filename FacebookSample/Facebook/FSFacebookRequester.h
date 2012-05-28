@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Facebook.h"
 
-@interface FSFacebookRequester : NSObject
-
+@interface FSFacebookRequester : NSObject {
+    
+}
+- (void)requestUserInfoWithFacebook:(Facebook *)facebook observer:(id)observer;
 @end
