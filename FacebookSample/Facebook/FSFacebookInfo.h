@@ -6,10 +6,13 @@
 //  Copyright (c) 2012 Keio University. All rights reserved.
 //
 
-static NSString *kAppId = @"196702453785192";
-static NSString *kSecretKey = @"75a33e4ba6a7d20288547b40e2255875";
-
 typedef enum apiCall {
     kAPIGraphMe,
 } apiCall;
+
+#define kAppId                  @"196702453785192"
+#define kSecretKey              @"75a33e4ba6a7d20288547b40e2255875"
+
+#define kFBAccessTokenKey       @"FBAccessTokenKey"
+#define kFBExpirationDateKey    @"FBExpirationDateKey"
 
