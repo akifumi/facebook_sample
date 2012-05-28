@@ -15,10 +15,17 @@ static FSCentral *object = nil;
 @end
 
 @implementation FSCentral
-@synthesize onFacebookDidLogin;
+@synthesize currentUser, onFacebookDidLogin;
 
 - (id)init{
     if (self = [super init]) {
+        self.currentUser = [[FSUser sharedObject] retain];
+        
+        [FSFacebookManager sharedManager].onDidLogin = ^(){
+            if (self.onFacebookDidLogin) {
+                self.onFacebookDidLogin();
+            }
+        };
     }
     return self;
 }
@@ -27,11 +34,6 @@ static FSCentral *object = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         object = [[self alloc] init];
-        [FSFacebookManager sharedManager].onDidLogin = ^(){
-            if (object.onFacebookDidLogin) {
-                object.onFacebookDidLogin();
-            }
-        };
     });
     return object;
 }
@@ -46,6 +48,7 @@ static FSCentral *object = nil;
 
 - (void)dealloc{
     [object release];
+    [self.currentUser release];
     [super dealloc];
 }
 

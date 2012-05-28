@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FSUser.h"
 
 typedef void (^Block)();
 
@@ -15,6 +16,7 @@ typedef void (^Block)();
     Block onFacebookDidLogin;
     
 }
+@property (nonatomic, strong) FSUser *currentUser;
 @property (nonatomic, copy) Block onFacebookDidLogin;
 + (FSCentral *)sharedObject;
 + (void)authorizeFacebook;
