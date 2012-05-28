@@ -14,9 +14,11 @@ typedef void (^FacebookObserverDelegateBlock)();
 @interface FSFacebookObserver : NSObject <FBSessionDelegate, FBRequestDelegate> {
         
     FacebookObserverDelegateBlock onDidLogin;
+    FacebookObserverDelegateBlock onGotUserInfo;
     
 }
 @property (nonatomic, strong) Facebook *facebook;
 @property (nonatomic, copy) FacebookObserverDelegateBlock onDidLogin;
+@property (nonatomic, copy) FacebookObserverDelegateBlock onGotUserInfo;
 @property (assign) int currentAPICall;
 @end

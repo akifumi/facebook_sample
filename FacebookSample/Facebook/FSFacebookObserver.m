@@ -9,6 +9,7 @@
 #import "FSFacebookObserver.h"
 #import "JSON.h"
 #import "FSFacebookInfo.h"
+#import "FSCentral.h"
 
 @interface FSFacebookObserver () {
 
@@ -17,7 +18,7 @@
 @end
 
 @implementation FSFacebookObserver
-@synthesize facebook, permissions, onDidLogin, currentAPICall;
+@synthesize facebook, permissions, onDidLogin, onGotUserInfo, currentAPICall;
 
 - (void)fbDidLogin{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -99,6 +100,12 @@
     if (self.currentAPICall == kAPIGraphMe) {
         if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
             result = [result objectAtIndex:0];
+        }
+        [FSCentral sharedObject].currentUser.facebookId = [result objectForKey:@"id"];
+        [FSCentral sharedObject].currentUser.facebookName = [result objectForKey:@"name"];
+        [FSCentral sharedObject].currentUser.facebookPictureUrl = [result objectForKey:@"picture"];
+        if (self.onGotUserInfo) {
+            self.onGotUserInfo();
         }
 //        NSLog(@"result:%@", result);
 //        NSString *userId = [result objectForKey:@"id"];
