@@ -11,6 +11,7 @@
 		B84B19271573BCC4007EAAE4 /* FSFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B19241573BCC4007EAAE4 /* FSFacebookManager.m */; };
 		B84B19281573BCC4007EAAE4 /* FSFacebookObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B19261573BCC4007EAAE4 /* FSFacebookObserver.m */; };
 		B84B19351573BD75007EAAE4 /* FSFacebookRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B19341573BD75007EAAE4 /* FSFacebookRequester.m */; };
+		B84B193C1573E57C007EAAE4 /* FSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B193B1573E57C007EAAE4 /* FSUser.m */; };
 		B869B6CD15722747006349BA /* FSNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6CC15722747006349BA /* FSNavigationBar.m */; };
 		B869B6D015722E8F006349BA /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B869B6CF15722E8F006349BA /* FBConnect.bundle */; };
 		B869B6D3157232F7006349BA /* FSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B869B6D2157232F7006349BA /* FSButton.m */; };
@@ -46,6 +47,8 @@
 		B84B19331573BD75007EAAE4 /* FSFacebookRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookRequester.h; sourceTree = "<group>"; };
 		B84B19341573BD75007EAAE4 /* FSFacebookRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFacebookRequester.m; sourceTree = "<group>"; };
 		B84B19361573C8A2007EAAE4 /* FSFacebookInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFacebookInfo.h; sourceTree = "<group>"; };
+		B84B193A1573E57C007EAAE4 /* FSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUser.h; sourceTree = "<group>"; };
+		B84B193B1573E57C007EAAE4 /* FSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUser.m; sourceTree = "<group>"; };
 		B869B6CB15722747006349BA /* FSNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNavigationBar.h; sourceTree = "<group>"; };
 		B869B6CC15722747006349BA /* FSNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNavigationBar.m; sourceTree = "<group>"; };
 		B869B6CF15722E8F006349BA /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBConnect.bundle; path = Facebook/FBConnect.bundle; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				B88B347B1572227E0043996E /* AppDelegate.m */,
 				B869B6EE157274DE006349BA /* ViewController */,
 				B84B19221573BCC4007EAAE4 /* Facebook */,
+				B84B193A1573E57C007EAAE4 /* FSUser.h */,
+				B84B193B1573E57C007EAAE4 /* FSUser.m */,
 				B869B6CB15722747006349BA /* FSNavigationBar.h */,
 				B869B6CC15722747006349BA /* FSNavigationBar.m */,
 				B869B6D1157232F7006349BA /* FSButton.h */,
@@ -315,6 +320,7 @@
 				B84B19271573BCC4007EAAE4 /* FSFacebookManager.m in Sources */,
 				B84B19281573BCC4007EAAE4 /* FSFacebookObserver.m in Sources */,
 				B84B19351573BD75007EAAE4 /* FSFacebookRequester.m in Sources */,
+				B84B193C1573E57C007EAAE4 /* FSUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
