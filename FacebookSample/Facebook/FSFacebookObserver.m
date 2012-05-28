@@ -19,25 +19,11 @@
 @implementation FSFacebookObserver
 @synthesize facebook, permissions, onDidLogin, currentAPICall;
 
-- (void)authorize{
-    if (![self.facebook isSessionValid]) {
-        [self.facebook authorize:self.permissions];
-    }else {
-        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @"SELECT uid, name, pic FROM user WHERE uid=me()", @"query",
-                                       nil];
-        [self.facebook requestWithMethodName:@"fql.query"
-                                         andParams:params
-                                     andHttpMethod:@"POST"
-                                       andDelegate:self];
-    }        
-}
-
-- (BOOL)completedLogin{
-    return [self.facebook isSessionValid];
-}
-
 - (void)fbDidLogin{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:facebook.accessToken forKey:kFBAccessTokenKey];
+    [defaults setObject:facebook.expirationDate forKey:kFBExpirationDateKey];
+    [defaults synchronize];
     if (self.onDidLogin) {
         self.onDidLogin();
     }
@@ -110,7 +96,6 @@
  *      didReceiveResponse:(NSURLResponse *)response
  */
 - (void)request:(FBRequest *)request didLoad:(id)result{
-    
     if (self.currentAPICall == kAPIGraphMe) {
         if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
             result = [result objectAtIndex:0];

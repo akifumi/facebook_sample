@@ -19,6 +19,4 @@ typedef void (^FacebookObserverDelegateBlock)();
 @property (nonatomic, strong) Facebook *facebook;
 @property (nonatomic, copy) FacebookObserverDelegateBlock onDidLogin;
 @property (assign) int currentAPICall;
-- (void)authorize;
-- (BOOL)completedLogin;
 @end
