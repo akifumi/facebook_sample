@@ -10,6 +10,7 @@
 #import "FSFacebookObserver.h"
 #import "FSFacebookRequester.h"
 #import "FSFacebookInfo.h"
+#import "FSCentral.h"
 
 static FSFacebookManager *manager = nil;
 
@@ -23,7 +24,7 @@ static FSFacebookManager *manager = nil;
 @end
 
 @implementation FSFacebookManager
-@synthesize onDidLogin;
+@synthesize onDidLogin, onGotUserInfo;
 @synthesize facebook, permissions, observer, requester;
 
 - (id)init{
@@ -46,6 +47,12 @@ static FSFacebookManager *manager = nil;
             }
             [self.requester requestUserInfoWithFacebook:self.facebook observer:self.observer];
         };
+        
+        self.observer.onGotUserInfo = ^(){
+            if (self.onGotUserInfo) {
+                self.onGotUserInfo();
+            }
+        };
     }
     return self;
 }
@@ -62,13 +69,7 @@ static FSFacebookManager *manager = nil;
     if (![self.facebook isSessionValid]) {
         [self.facebook authorize:self.permissions];
     }else {
-        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @"SELECT uid, name, pic FROM user WHERE uid=me()", @"query",
-                                       nil];
-        [self.facebook requestWithMethodName:@"fql.query"
-                                   andParams:params
-                               andHttpMethod:@"POST"
-                                 andDelegate:self.observer];
+        [self.requester requestUserInfoWithFacebook:self.facebook observer:self.observer];
     }        
 }
 

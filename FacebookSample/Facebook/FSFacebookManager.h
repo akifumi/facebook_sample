@@ -13,9 +13,11 @@ typedef void (^FacebookManagerDelegateBlock)();
 @interface FSFacebookManager : NSObject {
     
     FacebookManagerDelegateBlock onDidLogin;
+    FacebookManagerDelegateBlock onGotUserInfo;
 
 }
 @property (nonatomic, copy) FacebookManagerDelegateBlock onDidLogin;
+@property (nonatomic, copy) FacebookManagerDelegateBlock onGotUserInfo;
 + (FSFacebookManager *)sharedManager;
 - (void)authorize;
 - (BOOL)completedLogin;
