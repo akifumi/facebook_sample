@@ -36,7 +36,7 @@
         FSFacebookLoginViewController *facebookLoginController = [[FSFacebookLoginViewController alloc] init];
         [self.window addSubview:facebookLoginController.view];
         [FSCentral sharedObject].onFacebookDidLogin = ^(){
-            [self.window removeFromSuperview];
+            [facebookLoginController.view removeFromSuperview];
             [self.window addSubview:navigationController.view];
         };
     }else {
