@@ -15,10 +15,12 @@ typedef void (^FacebookObserverDelegateBlock)();
         
     FacebookObserverDelegateBlock onDidLogin;
     FacebookObserverDelegateBlock onGotUserInfo;
+    FacebookObserverDelegateBlock onGotFriendsInfo;
     
 }
 @property (nonatomic, strong) Facebook *facebook;
 @property (nonatomic, copy) FacebookObserverDelegateBlock onDidLogin;
 @property (nonatomic, copy) FacebookObserverDelegateBlock onGotUserInfo;
+@property (nonatomic, copy) FacebookObserverDelegateBlock onGotFriendsInfo;
 @property (assign) int currentAPICall;
 @end

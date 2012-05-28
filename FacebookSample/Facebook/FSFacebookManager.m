@@ -24,7 +24,7 @@ static FSFacebookManager *manager = nil;
 @end
 
 @implementation FSFacebookManager
-@synthesize onDidLogin, onGotUserInfo;
+@synthesize onDidLogin, onGotUserInfo, onGotFriendsInfo;
 @synthesize facebook, permissions, observer, requester;
 
 - (id)init{
@@ -51,6 +51,14 @@ static FSFacebookManager *manager = nil;
         self.observer.onGotUserInfo = ^(){
             if (self.onGotUserInfo) {
                 self.onGotUserInfo();
+            }
+            self.observer.currentAPICall = kAPIGraphFriends;
+            [self.requester requestFriendsWithFacebook:self.facebook observer:self.observer];
+        };
+        
+        self.observer.onGotFriendsInfo = ^(){
+            if (self.onGotFriendsInfo) {
+                self.onGotFriendsInfo();
             }
         };
     }

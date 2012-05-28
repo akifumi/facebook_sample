@@ -9,15 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "FSUser.h"
 
-typedef void (^Block)();
+typedef void (^FSCentralBlock)();
 
 @interface FSCentral : NSObject {
 
-    Block onFacebookDidLogin;
+    FSCentralBlock onFacebookDidLogin;
+    FSCentralBlock onFacebookGotFriendsInfo;
     
 }
 @property (nonatomic, strong) FSUser *currentUser;
-@property (nonatomic, copy) Block onFacebookDidLogin;
+@property (nonatomic, strong) NSArray *friendsInfo;
+@property (nonatomic, copy) FSCentralBlock onFacebookDidLogin;
+@property (nonatomic, copy) FSCentralBlock onFacebookGotFriendsInfo;
 + (FSCentral *)sharedObject;
 + (void)authorizeFacebook;
 + (BOOL)completedLogin;

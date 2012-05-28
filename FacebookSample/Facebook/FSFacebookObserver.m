@@ -18,7 +18,7 @@
 @end
 
 @implementation FSFacebookObserver
-@synthesize facebook, permissions, onDidLogin, onGotUserInfo, currentAPICall;
+@synthesize facebook, permissions, onDidLogin, onGotUserInfo, onGotFriendsInfo, currentAPICall;
 
 - (void)fbDidLogin{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -97,10 +97,10 @@
  *      didReceiveResponse:(NSURLResponse *)response
  */
 - (void)request:(FBRequest *)request didLoad:(id)result{
+    if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
+        result = [result objectAtIndex:0];
+    }
     if (self.currentAPICall == kAPIGraphMe) {
-        if ([result isKindOfClass:[NSArray class]] && ([result count] > 0)) {
-            result = [result objectAtIndex:0];
-        }
         [FSCentral sharedObject].currentUser.facebookId = [result objectForKey:@"id"];
         [FSCentral sharedObject].currentUser.facebookName = [result objectForKey:@"name"];
         [FSCentral sharedObject].currentUser.facebookPictureUrl = [result objectForKey:@"picture"];
@@ -111,6 +111,14 @@
 //        NSString *userId = [result objectForKey:@"id"];
 //        NSString *name = [result objectForKey:@"name"];
 //        NSString *pictureURL = [result objectForKey:@"picture"];
+    }else if (self.currentAPICall == kAPIGraphFriends) {
+        result = [result objectForKey:@"data"];
+        [FSCentral sharedObject].friendsInfo = [result copy];
+        if (self.onGotFriendsInfo) {
+            self.onGotFriendsInfo();
+        }
+    }else if (self.currentAPICall == kAPIGraphAlbum) {
+//        NSLog(@"result:%@", result);
     }
 }
 

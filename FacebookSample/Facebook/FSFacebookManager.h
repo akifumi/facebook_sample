@@ -14,10 +14,12 @@ typedef void (^FacebookManagerDelegateBlock)();
     
     FacebookManagerDelegateBlock onDidLogin;
     FacebookManagerDelegateBlock onGotUserInfo;
+    FacebookManagerDelegateBlock onGotFriendsInfo;
 
 }
 @property (nonatomic, copy) FacebookManagerDelegateBlock onDidLogin;
 @property (nonatomic, copy) FacebookManagerDelegateBlock onGotUserInfo;
+@property (nonatomic, copy) FacebookManagerDelegateBlock onGotFriendsInfo;
 + (FSFacebookManager *)sharedManager;
 - (void)authorize;
 - (BOOL)completedLogin;
