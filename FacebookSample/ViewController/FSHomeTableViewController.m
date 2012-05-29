@@ -10,7 +10,7 @@
 #import "FSCentral.h"
 
 @interface FSHomeTableViewController () {
-    NSArray *items;
+    NSArray *users;
 }
 
 @end
@@ -24,7 +24,15 @@
         // Custom initialization
         self.title = @"Home";
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
-        items = [FSCentral sharedObject].friendsInfo;
+        users = [FSCentral sharedObject].curentUserFriendsInfo;
+//        users = [[NSMutableArray array] retain];
+//        for (int i = 0; i < items.count; i++) {
+//            FSUser *user = [[[FSUser alloc] init] autorelease];
+//            user.facebookId = [[items objectAtIndex:i] objectForKey:@"id"];
+//            user.facebookName = [[items objectAtIndex:i] objectForKey:@"name"];
+//            user.facebookPictureUrl = [[items objectAtIndex:i] objectForKey:@"picture"];
+//            [users insertObject:user atIndex:i];
+//        }
     }
     return self;
 }
@@ -65,7 +73,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return items.count;
+    return users.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,9 +85,10 @@
     }
     
     // Configure the cell...
-    UIImage *profileImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[items objectAtIndex:indexPath.row] objectForKey:@"picture"]]]];
+    FSUser *user = [users objectAtIndex:indexPath.row];
+    UIImage *profileImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user.facebookPictureUrl]]];
     cell.imageView.image = profileImage;
-    cell.textLabel.text = [[items objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = user.facebookName;
     
     return cell;
 }
@@ -127,6 +136,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    FSUser *user = [users objectAtIndex:indexPath.row];
+    [FSCentral requestFacebookUserAlbumsWith:user];
+    NSLog(@"id:%@, name:%@, picture:%@", user.facebookId, user.facebookName, user.facebookPictureUrl);
     // Navigation logic may go here. Create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
