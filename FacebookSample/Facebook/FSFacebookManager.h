@@ -7,20 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FSUser.h"
 
 typedef void (^FacebookManagerDelegateBlock)();
 
 @interface FSFacebookManager : NSObject {
     
     FacebookManagerDelegateBlock onDidLogin;
-    FacebookManagerDelegateBlock onGotUserInfo;
-    FacebookManagerDelegateBlock onGotFriendsInfo;
+    FacebookManagerDelegateBlock onGotCurrentUserInfo;
+    FacebookManagerDelegateBlock onGotCurrentUserFriendsInfo;
 
 }
 @property (nonatomic, copy) FacebookManagerDelegateBlock onDidLogin;
-@property (nonatomic, copy) FacebookManagerDelegateBlock onGotUserInfo;
-@property (nonatomic, copy) FacebookManagerDelegateBlock onGotFriendsInfo;
+@property (nonatomic, copy) FacebookManagerDelegateBlock onGotCurrentUserInfo;
+@property (nonatomic, copy) FacebookManagerDelegateBlock onGotCurrentUserFriendsInfo;
 + (FSFacebookManager *)sharedManager;
 - (void)authorize;
 - (BOOL)completedLogin;
+- (void)requestFacebookCueentUserInfo;
+- (void)requestFacebookUserAlbumsWith:(FSUser *)user;
+- (void)requestFacebookCueentUserFriendsInfo;
 @end

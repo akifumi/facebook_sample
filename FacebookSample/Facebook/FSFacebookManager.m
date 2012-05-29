@@ -24,7 +24,7 @@ static FSFacebookManager *manager = nil;
 @end
 
 @implementation FSFacebookManager
-@synthesize onDidLogin, onGotUserInfo, onGotFriendsInfo;
+@synthesize onDidLogin, onGotCurrentUserInfo, onGotCurrentUserFriendsInfo;
 @synthesize facebook, permissions, observer, requester;
 
 - (id)init{
@@ -41,24 +41,20 @@ static FSFacebookManager *manager = nil;
         }
         
         self.observer.onDidLogin = ^(){
-            self.observer.currentAPICall = kAPIGraphMe;
             if (self.onDidLogin) {
                 self.onDidLogin();
             }
-            [self.requester requestUserInfoWithFacebook:self.facebook observer:self.observer];
         };
         
         self.observer.onGotUserInfo = ^(){
-            if (self.onGotUserInfo) {
-                self.onGotUserInfo();
+            if (self.onGotCurrentUserInfo) {
+                self.onGotCurrentUserInfo();
             }
-            self.observer.currentAPICall = kAPIGraphFriends;
-            [self.requester requestFriendsWithFacebook:self.facebook observer:self.observer];
         };
         
         self.observer.onGotFriendsInfo = ^(){
-            if (self.onGotFriendsInfo) {
-                self.onGotFriendsInfo();
+            if (self.onGotCurrentUserFriendsInfo) {
+                self.onGotCurrentUserFriendsInfo();
             }
         };
     }
@@ -84,6 +80,22 @@ static FSFacebookManager *manager = nil;
 - (BOOL)completedLogin{
     return [self.facebook isSessionValid];
 }
+
+- (void)requestFacebookCueentUserInfo{
+    self.observer.currentAPICall = kAPIGraphMe;
+    [self.requester requestUserInfoWithFacebook:self.facebook observer:self.observer];
+}
+
+- (void)requestFacebookCueentUserFriendsInfo{
+    self.observer.currentAPICall = kAPIGraphFriends;
+    [self.requester requestCurrentUserFriendsWithFacebook:self.facebook observer:self.observer];
+}
+
+- (void)requestFacebookUserAlbumsWith:(FSUser *)user{
+    self.observer.currentAPICall = kAPIGraphAlbum;
+    [self.requester requestAlbumsWithFacebook:self.facebook observer:self.observer facebookId:user.facebookId];
+}
+
 
 - (void)dealloc{
     [manager release];
