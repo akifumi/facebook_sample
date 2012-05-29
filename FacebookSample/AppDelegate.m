@@ -35,17 +35,24 @@
     
     [FSCentral sharedObject];
 
-    if (![FSCentral completedLogin]) {
+    if (![FSCentral completedFacebookLogin]) {
         FSFacebookLoginViewController *facebookLoginController = [[[FSFacebookLoginViewController alloc] init] autorelease];
         [self.window addSubview:facebookLoginController.view];
+        
         [FSCentral sharedObject].onFacebookDidLogin = ^(){
-            [facebookLoginController.view removeFromSuperview];
-            [self replaceHomeScene];
+            [FSCentral requestFacebookCueentUserFriendsInfo];
+            [FSCentral sharedObject].onFacebookGotCurrentUserFriendsInfo = ^(){
+                [facebookLoginController.view removeFromSuperview];
+                [self replaceHomeScene];
+            };
         };
     }else {
-        [FSCentral authorizeFacebook];
-        [FSCentral sharedObject].onFacebookGotFriendsInfo = ^(){
-            [self replaceHomeScene];
+        [FSCentral requestFacebookCueentUserInfo];
+        [FSCentral sharedObject].onFacebookGotCurrentUserInfo = ^(){
+            [FSCentral requestFacebookCueentUserFriendsInfo];
+            [FSCentral sharedObject].onFacebookGotCurrentUserFriendsInfo = ^(){
+                [self replaceHomeScene];
+            };
         };
     }
     
