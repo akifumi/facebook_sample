@@ -114,13 +114,22 @@
     }else if (self.currentAPICall == kAPIGraphFriends) {
         result = [result objectForKey:@"data"];
 //        NSLog(@"result:%@", result);
-        [FSCentral sharedObject].friendsInfo = result;
+        NSMutableArray *users = [NSMutableArray array];
+        for (NSDictionary *userInfo in result) {
+            FSUser *user = [[[FSUser alloc] init] autorelease];
+            user.facebookId = [userInfo objectForKey:@"id"];
+            user.facebookName = [userInfo objectForKey:@"name"];
+            user.facebookPictureUrl = [userInfo objectForKey:@"picture"];
+            [users addObject:user];
+        }
+        [FSCentral sharedObject].curentUserFriendsInfo = users;
         if (self.onGotFriendsInfo) {
             self.onGotFriendsInfo();
         }
     }else if (self.currentAPICall == kAPIGraphAlbum) {
-//        NSLog(@"result:%@", result);
+        NSLog(@"result:%@", result);
     }
+    NSLog(@"got request");
 }
 
 /**
