@@ -15,11 +15,11 @@ static FSCentral *object = nil;
 @end
 
 @implementation FSCentral
-@synthesize currentUser, friendsInfo, onFacebookDidLogin, onFacebookGotFriendsInfo;
+@synthesize currentUser, curentUserFriendsInfo, onFacebookDidLogin, onFacebookGotCurrentUserInfo, onFacebookGotCurrentUserFriendsInfo;
 
 - (id)init{
     if (self = [super init]) {
-        self.currentUser = [[FSUser sharedObject] retain];
+        self.currentUser = [[[FSUser alloc] init] retain];
         
         [FSFacebookManager sharedManager].onDidLogin = ^(){
             if (self.onFacebookDidLogin) {
@@ -27,9 +27,16 @@ static FSCentral *object = nil;
             }
         };
         
-        [FSFacebookManager sharedManager].onGotFriendsInfo = ^(){
-            if (self.onFacebookGotFriendsInfo) {
-                self.onFacebookGotFriendsInfo();
+        [FSFacebookManager sharedManager].onGotCurrentUserInfo = ^(){
+            if (self.onFacebookGotCurrentUserInfo) {
+                self.onFacebookGotCurrentUserInfo();
+            }
+
+        };
+        
+        [FSFacebookManager sharedManager].onGotCurrentUserFriendsInfo = ^(){
+            if (self.onFacebookGotCurrentUserFriendsInfo) {
+                self.onFacebookGotCurrentUserFriendsInfo();
             }
         };
     }
@@ -48,8 +55,20 @@ static FSCentral *object = nil;
     [[FSFacebookManager sharedManager] authorize];
 }
 
-+ (BOOL)completedLogin{
++ (BOOL)completedFacebookLogin{
     return [[FSFacebookManager sharedManager] completedLogin];
+}
+
++ (void)requestFacebookCueentUserInfo;{
+    [[FSFacebookManager sharedManager] requestFacebookCueentUserInfo];
+}
+
++ (void)requestFacebookCueentUserFriendsInfo{
+    [[FSFacebookManager sharedManager] requestFacebookCueentUserFriendsInfo];
+}
+
++ (void)requestFacebookUserAlbumsWith:(FSUser *)user{
+    [[FSFacebookManager sharedManager] requestFacebookUserAlbumsWith:user];
 }
 
 - (void)dealloc{

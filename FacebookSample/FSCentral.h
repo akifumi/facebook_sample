@@ -14,14 +14,19 @@ typedef void (^FSCentralBlock)();
 @interface FSCentral : NSObject {
 
     FSCentralBlock onFacebookDidLogin;
-    FSCentralBlock onFacebookGotFriendsInfo;
+    FSCentralBlock onFacebookGotCurrentUserInfo;
+    FSCentralBlock onFacebookGotCurrentUserFriendsInfo;
     
 }
 @property (nonatomic, strong) FSUser *currentUser;
-@property (nonatomic, strong) NSArray *friendsInfo;
+@property (nonatomic, strong) NSArray *curentUserFriendsInfo;
 @property (nonatomic, copy) FSCentralBlock onFacebookDidLogin;
-@property (nonatomic, copy) FSCentralBlock onFacebookGotFriendsInfo;
+@property (nonatomic, copy) FSCentralBlock onFacebookGotCurrentUserInfo;
+@property (nonatomic, copy) FSCentralBlock onFacebookGotCurrentUserFriendsInfo;
 + (FSCentral *)sharedObject;
 + (void)authorizeFacebook;
-+ (BOOL)completedLogin;
++ (BOOL)completedFacebookLogin;
++ (void)requestFacebookCueentUserInfo;
++ (void)requestFacebookCueentUserFriendsInfo;
++ (void)requestFacebookUserAlbumsWith:(FSUser *)user;
 @end
