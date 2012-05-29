@@ -13,6 +13,6 @@
     
 }
 - (void)requestUserInfoWithFacebook:(Facebook *)facebook observer:(id)observer;
-- (void)requestFriendsWithFacebook:(Facebook *)facebook observer:(id)observer;
+- (void)requestCurrentUserFriendsWithFacebook:(Facebook *)facebook observer:(id)observer;
 - (void)requestAlbumsWithFacebook:(Facebook *)facebook observer:(id)observer facebookId:(NSString *)facebookId;
 @end

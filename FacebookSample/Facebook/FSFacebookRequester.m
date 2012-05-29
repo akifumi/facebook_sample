@@ -15,23 +15,29 @@
     [facebook requestWithGraphPath:@"me" andParams:params andDelegate:observer];
 }
 
-- (void)requestFriendsWithFacebook:(Facebook *)facebook observer:(id)observer{
+- (void)requestCurrentUserFriendsWithFacebook:(Facebook *)facebook observer:(id)observer{
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"name, picture", @"fields", nil];
     [facebook requestWithGraphPath:@"me/friends" andParams:params andDelegate:observer];
 }
 
 - (void)requestAlbumsWithFacebook:(Facebook *)facebook observer:(id)observer facebookId:(NSString *)facebookId{
-//    NSString *graphPath = [facebookId stringByAppendingPathComponent:@"albums"];
+    NSString *graphPath = [facebookId stringByAppendingPathComponent:@"albums"];
 //    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"albums", @"fields", nil];
 //    [facebook requestWithGraphPath:graphPath andParams:params andDelegate:observer];
 //    [facebook requestWithGraphPath:graphPath andDelegate:observer];
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   [NSString stringWithFormat:@"SELECT uid, name, pic FROM user WHERE uid=%@", facebookId], @"query",
-                                   nil];
-    [facebook requestWithMethodName:@"fql.query"
-                          andParams:params
-                      andHttpMethod:@"GET"
-                        andDelegate:observer];
+    NSLog(@"send request");
+//    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                   [NSString stringWithFormat:@"SELECT albums FROM user WHERE uid=%@", facebookId], @"query",
+//                                   nil];
+//    [facebook requestWithMethodName:@"fql.query"
+//                          andParams:params
+//                      andHttpMethod:@"GET"
+//                        andDelegate:observer];
+    
+    NSLog(@"%@", graphPath);
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"albums", @"connectios", nil];
+    [facebook requestWithGraphPath:graphPath andParams:params andDelegate:observer];
+
 }
 
 @end
