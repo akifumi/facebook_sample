@@ -77,7 +77,9 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"item%d", indexPath.row];
+    UIImage *profileImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[items objectAtIndex:indexPath.row] objectForKey:@"picture"]]]];
+    cell.imageView.image = profileImage;
+    cell.textLabel.text = [[items objectAtIndex:indexPath.row] objectForKey:@"name"];
     
     return cell;
 }
