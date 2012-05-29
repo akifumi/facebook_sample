@@ -35,6 +35,7 @@
 		B88B34AF157222E70043996E /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34A1157222E70043996E /* SBJsonBase.m */; };
 		B88B34B0157222E70043996E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34A3157222E70043996E /* SBJsonParser.m */; };
 		B88B34B1157222E70043996E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B88B34A5157222E70043996E /* SBJsonWriter.m */; };
+		B8E71BCA157515A800D0410C /* FSFriendAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E71BC9157515A800D0410C /* FSFriendAlbumsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		B88B34A3157222E70043996E /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		B88B34A4157222E70043996E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		B88B34A5157222E70043996E /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		B8E71BC8157515A800D0410C /* FSFriendAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFriendAlbumsViewController.h; sourceTree = "<group>"; };
+		B8E71BC9157515A800D0410C /* FSFriendAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFriendAlbumsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				B869B6F3157274FE006349BA /* FSFacebookLoginViewController.m */,
 				B83023751572AE5100CDB66C /* FSHomeTableViewController.h */,
 				B83023761572AE5100CDB66C /* FSHomeTableViewController.m */,
+				B8E71BC8157515A800D0410C /* FSFriendAlbumsViewController.h */,
+				B8E71BC9157515A800D0410C /* FSFriendAlbumsViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				B84B19281573BCC4007EAAE4 /* FSFacebookObserver.m in Sources */,
 				B84B19351573BD75007EAAE4 /* FSFacebookRequester.m in Sources */,
 				B84B193C1573E57C007EAAE4 /* FSUser.m in Sources */,
+				B8E71BCA157515A800D0410C /* FSFriendAlbumsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
