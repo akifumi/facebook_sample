@@ -113,6 +113,7 @@
 //        NSString *pictureURL = [result objectForKey:@"picture"];
     }else if (self.currentAPICall == kAPIGraphFriends) {
         result = [result objectForKey:@"data"];
+//        NSLog(@"result:%@", result);
         [FSCentral sharedObject].friendsInfo = result;
         if (self.onGotFriendsInfo) {
             self.onGotFriendsInfo();
