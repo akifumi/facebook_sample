@@ -14,5 +14,4 @@
 @property (nonatomic, strong) NSString *facebookId;
 @property (nonatomic, strong) NSString *facebookName;
 @property (nonatomic, strong) NSString *facebookPictureUrl;
-+ (FSUser *)sharedObject;
 @end

@@ -8,22 +8,7 @@
 
 #import "FSUser.h"
 
-static FSUser *user = nil;
-
 @implementation FSUser
 @synthesize facebookId, facebookName, facebookPictureUrl;
-
-+ (FSUser *)sharedObject{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        user = [[self alloc] init];
-    });
-    return user;
-}
-
-- (void)dealloc{
-    [user release];
-    [super dealloc];
-}
 
 @end
