@@ -20,8 +20,18 @@
     [facebook requestWithGraphPath:@"me/friends" andParams:params andDelegate:observer];
 }
 
-- (void)requestPicturesAlbumWithFacebook:(Facebook *)facebook observer:(id)observer{
-    [facebook requestWithGraphPath:@"me/albums" andDelegate:observer];
+- (void)requestAlbumsWithFacebook:(Facebook *)facebook observer:(id)observer facebookId:(NSString *)facebookId{
+//    NSString *graphPath = [facebookId stringByAppendingPathComponent:@"albums"];
+//    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"albums", @"fields", nil];
+//    [facebook requestWithGraphPath:graphPath andParams:params andDelegate:observer];
+//    [facebook requestWithGraphPath:graphPath andDelegate:observer];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   [NSString stringWithFormat:@"SELECT uid, name, pic FROM user WHERE uid=%@", facebookId], @"query",
+                                   nil];
+    [facebook requestWithMethodName:@"fql.query"
+                          andParams:params
+                      andHttpMethod:@"GET"
+                        andDelegate:observer];
 }
 
 @end
